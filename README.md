@@ -29,7 +29,11 @@ cd Playwright-Reiz-Tech
 ```bash
 npm install
 ```
-
+### 2. Install Dependencies
+Install Playwright browsers
+```bash
+npx playwright install
+```
 ### 3. Running tests
 Run all tests
 ```bash
