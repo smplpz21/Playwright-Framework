@@ -1,6 +1,6 @@
 # 🎭 Playwright UI Automation - Buggy Cars Rating
 
-UI tests written using [Playwright](https://playwright.dev/) to validate the [Buggy Cars Rating](https://buggy.justtestit.org/) web application.
+Automation Framework written using [Playwright](https://playwright.dev/) - Typescript to validate the [Buggy Cars Rating](https://buggy.justtestit.org/) web application.
 
 ---
 
