@@ -125,5 +125,5 @@ export class BasePage {
 		return element.inputValue();
 	}
 
-	// test
+	// test2
 }
