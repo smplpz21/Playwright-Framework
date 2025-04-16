@@ -16,11 +16,16 @@ Automation Framework written using [Playwright](https://playwright.dev/) - Types
 
 
 ---
+## Pre-requisite
+MAke sure NodeJS and GIT is installed in your machine. If not,
+You may install and download it here:
+[Git]https://git-scm.com/downloads/win
+[NodeJs](https://nodejs.org/en)
 
 ## 🚀 Getting Started
+Open CMD
 
 ### 1. Clone the Repository
-
 ```bash
 git clone https://github.com/smplpz21/Playwright-Reiz-Tech.git
 cd Playwright-Reiz-Tech
