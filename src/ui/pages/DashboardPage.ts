@@ -21,9 +21,8 @@ export class DashboardPage extends BasePage {
 
 	/**
 	 * Clicks the Profile navigation link to go to the profile page.
-	 * @returns {Promise<void>}
 	 */
-	async clickProfileNavigationLink(): Promise<void> {
+	async clickProfileNavigationLink() {
 		await this.clickElement(this.profileNavLink);
 	}
 }

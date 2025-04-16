@@ -22,6 +22,9 @@ export class ProfilePage extends BasePage {
 	/** Locator for the hobby dropdown element */
 	readonly hobbyDropdown: Locator;
 
+	/** Locator for the cancel button */
+	readonly cancelProfileButton: Locator;
+
 	/**
 	 * Initializes the ProfilePage with all necessary locators.
 	 * @param {Page} page - The Playwright Page object.
@@ -33,32 +36,30 @@ export class ProfilePage extends BasePage {
 		this.saveProfileButton = page.getByRole('button', { name: 'Save' });
 		this.profileSavedAlert = page.locator('.alert-success.hidden-md-down');
 		this.hobbyDropdown = page.locator('#hobby');
+		this.cancelProfileButton = page.getByRole('button', { name: 'Cancel' });
 	}
 
 	/**
 	 * Updates the address field with the specified address.
 	 * @param {string} address - The new address to set.
-	 * @returns {Promise<void>}
 	 */
-	async updateAddress(address: string): Promise<void> {
-		await this.clearTextbox(this.addressTextbox);
+	async updateAddress(address: string) {
+		//await this.clearTextbox(this.addressTextbox);
 		await this.fillFormField(this.addressTextbox, address);
 	}
 
 	/**
 	 * Selects a hobby from the dropdown using its value.
 	 * @param {string} hobby - The value of the hobby to select.
-	 * @returns {Promise<void>}
 	 */
-	async selectAHobby(hobby: string): Promise<void> {
+	async selectAHobby(hobby: string) {
 		await this.selectDropdownByValue(this.hobbySelector, hobby);
 	}
 
 	/**
 	 * Clicks the save profile button.
-	 * @returns {Promise<void>}
 	 */
-	async clickSaveProfileButton(): Promise<void> {
+	async clickSaveProfileButton() {
 		await this.clickElement(this.saveProfileButton);
 	}
 
@@ -80,9 +81,14 @@ export class ProfilePage extends BasePage {
 
 	/**
 	 * Reloads the profile page.
-	 * @returns {Promise<void>}
 	 */
-	async reloadProfilePage(): Promise<void> {
+	async reloadProfilePage() {
 		await this.refreshPage();
+	}
+	/**
+	 * Click Cancel button on the profile page
+	 */
+	async clickCancelButton() {
+		await this.clickElement(this.cancelProfileButton);
 	}
 }

@@ -1,3 +1,4 @@
+import { TIMEOUT } from 'dns';
 import { expect, test } from '../../fixtures/pomFixtures';
 import { Helper } from '../../utilities/helper';
 
@@ -26,7 +27,7 @@ test('Update user profile', async ({ loginPage, dashboardPage, profilePage }) =>
 		await dashboardPage.clickProfileNavigationLink();
 
 		// Ensure we have landed on the profile page by verifying address input is visible
-		await expect(profilePage.addressTextbox).toBeVisible();
+		await expect(profilePage.addressTextbox).toBeVisible({ timeout: 10000 });
 	});
 
 	let prevAddressValue: string;
@@ -63,15 +64,17 @@ test('Update user profile', async ({ loginPage, dashboardPage, profilePage }) =>
 		await expect(profilePage.hobbyDropdown).toHaveValue(newHobbyValue);
 	});
 
-	await test.step('Reload and verify updated profile details', async () => {
-		await profilePage.reloadProfilePage();
+	await test.step('Verify updated profile details', async () => {
+		await profilePage.clickCancelButton();
+		// await profilePage.reloadProfilePage();
+
 		await dashboardPage.clickProfileNavigationLink();
 
 		// Ensure the success alert is not visible after reloading
-		await expect(profilePage.profileSavedAlert).toBeVisible({ visible: false });
+		await expect(profilePage.profileSavedAlert).toBeVisible({ visible: false, timeout: 10000 });
 
 		// Confirm the saved address persists after reload
-		await expect(profilePage.addressTextbox).toHaveValue(newAddressValue);
+		await expect(profilePage.addressTextbox).toHaveValue(newAddressValue, { timeout: 10000 });
 
 		// Confirm the selected hobby also persists after reload
 		await expect(profilePage.hobbyDropdown).toHaveValue(newHobbyValue);

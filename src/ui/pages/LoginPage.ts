@@ -30,26 +30,23 @@ export class LoginPage extends BasePage {
 	/**
 	 * Fills the login textbox with the provided username.
 	 * @param {string} username - The username to input.
-	 * @returns {Promise<void>}
 	 */
-	async enterUsername(username: string): Promise<void> {
+	async enterUsername(username: string) {
 		await this.fillFormField(this.loginTextbox, username);
 	}
 
 	/**
 	 * Fills the password textbox with the provided password.
 	 * @param {string} password - The password to input.
-	 * @returns {Promise<void>}
 	 */
-	async enterPassword(password: string): Promise<void> {
+	async enterPassword(password: string) {
 		await this.fillFormField(this.passwordTextbox, password);
 	}
 
 	/**
 	 * Clicks the login button to submit the form.
-	 * @returns {Promise<void>}
 	 */
-	async clickLoginButton(): Promise<void> {
+	async clickLoginButton() {
 		await this.clickElement(this.loginButton);
 	}
 }

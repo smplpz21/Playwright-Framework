@@ -19,9 +19,8 @@ export class BasePage {
 	/**
 	 * Navigates to the specified URL.
 	 * @param {string} url - The destination URL.
-	 * @returns {Promise<void>}
 	 */
-	async navigateTo(url: string): Promise<void> {
+	async navigateTo(url: string) {
 		await this.page.goto(url);
 	}
 
@@ -54,27 +53,24 @@ export class BasePage {
 	/**
 	 * Waits until the element becomes visible.
 	 * @param {Locator} element - The locator of the element.
-	 * @returns {Promise<void>}
 	 */
-	protected async waitForElementVisible(element: Locator): Promise<void> {
+	protected async waitForElementVisible(element: Locator) {
 		await element.waitFor({ state: 'visible', timeout: 30000 });
 	}
 
 	/**
 	 * Waits until the element becomes hidden.
 	 * @param {Locator} element - The locator of the element.
-	 * @returns {Promise<void>}
 	 */
-	protected async waitForElementHidden(element: Locator): Promise<void> {
+	protected async waitForElementHidden(element: Locator) {
 		await element.waitFor({ state: 'hidden', timeout: 5000 });
 	}
 
 	/**
 	 * Captures a screenshot of the current page.
 	 * @param {string} filename - The path where the screenshot will be saved.
-	 * @returns {Promise<void>}
 	 */
-	protected async takeScreenshot(filename: string): Promise<void> {
+	protected async takeScreenshot(filename: string) {
 		await this.page.screenshot({ path: filename });
 	}
 
@@ -100,7 +96,6 @@ export class BasePage {
 	 * Selects a value from a dropdown using its selector and option value.
 	 * @param {string} selector - The CSS selector for the dropdown element.
 	 * @param {string} option - The value to select.
-	 * @returns {Promise<void>}
 	 */
 	protected async selectDropdownByValue(selector: string, option: string): Promise<void> {
 		await this.page.selectOption(selector, option);
@@ -108,18 +103,16 @@ export class BasePage {
 
 	/**
 	 * Reloads the current page.
-	 * @returns {Promise<void>}
 	 */
-	protected async refreshPage(): Promise<void> {
+	protected async refreshPage() {
 		await this.page.reload();
 	}
 
 	/**
 	 * Clears the content of a textbox element.
 	 * @param {Locator} element - The locator of the textbox.
-	 * @returns {Promise<void>}
 	 */
-	protected async clearTextbox(element: Locator): Promise<void> {
+	protected async clearTextbox(element: Locator) {
 		await element.clear();
 	}
 
