@@ -1,0 +1,25 @@
+{
+	"name": "playwright-reiz-tech",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"chrome-ui-headedless": "npx playwright test --project=chromium-ui && npx playwright show-report",
+		"firefox-ui-headedless": "npx playwright test --project=chromium-ui && npx playwright show-report",
+		"webkkit-ui-headedless": "npx playwright test --project=chromium-ui && npx playwright show-report",
+		"chrome-ui-headeded": "npx playwright test --project=chromium-ui && npx playwright show-report",
+		"firefox-ui-headeded": "npx playwright test --project=chromium-ui && npx playwright show-report",
+		"webkkit-ui-headeded": "npx playwright test --project=chromium-ui && npx playwright show-report",
+		"exec-all": "npx playwright test && npx playwright show-report"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@playwright/test": "^1.51.1",
+		"@types/node": "^22.14.1"
+	},
+	"dependencies": {
+		"dotenv": "^16.5.0"
+	}
+}
