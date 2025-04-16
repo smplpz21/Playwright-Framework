@@ -5,13 +5,15 @@ dotenv.config();
 export default defineConfig({
 	// timeout: 60000,
 	// reportSlowTests: null,
+	expect: {
+		timeout: 10000,
+	},
 	testDir: './tests',
 	fullyParallel: true,
 	retries: 1,
 	workers: 9,
 	reporter: [['html']],
 	use: {
-		headless: false,
 		trace: 'on-first-retry',
 		screenshot: 'only-on-failure',
 	},
