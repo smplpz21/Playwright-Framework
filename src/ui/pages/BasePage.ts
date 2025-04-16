@@ -124,4 +124,6 @@ export class BasePage {
 	protected async getElementInputValue(element: Locator): Promise<string> {
 		return element.inputValue();
 	}
+
+	// test
 }
