@@ -1,22 +1,23 @@
-import { TIMEOUT } from 'dns';
 import { expect, test } from '../../fixtures/pomFixtures';
 import { Helper } from '../../utilities/helper';
-
-// Credentials from environment variables
-const username = process.env.TEST_USERNAME;
-const password = process.env.TEST_PASSWORD;
-
-// Random string generator for unique test input
-const randomString = Helper.generateRandomString(10);
 
 // Load test data from JSON file
 const data = Helper.readTestData('update-user-profile-data');
 
-test('Update user profile', async ({ loginPage, dashboardPage, profilePage }) => {
+test('Update user profile', async ({ loginPage, dashboardPage, profilePage }, testInfo) => {
+
+	// Credentials from environment variables
+	const { username, password } = testInfo.project.use as {
+		username: string,
+		password: string
+	}
+	// Random string generator for unique test input
+	const randomString = Helper.generateRandomString(10);
+
 	await test.step('Login as existing user', async () => {
 		await loginPage.navigateTo('/');
-		await loginPage.enterUsername(username as string);
-		await loginPage.enterPassword(password as string);
+		await loginPage.enterUsername(username);
+		await loginPage.enterPassword(password);
 		await loginPage.clickLoginButton();
 
 		// Verify successful login by checking visibility of profile navigation link on dashboard
@@ -64,9 +65,9 @@ test('Update user profile', async ({ loginPage, dashboardPage, profilePage }) =>
 		await expect(profilePage.hobbyDropdown).toHaveValue(newHobbyValue);
 	});
 
-	await test.step('Verify updated profile details', async () => {
-		await profilePage.clickCancelButton();
-		// await profilePage.reloadProfilePage();
+	await test.step('Reload and Verify updated profile details', async () => {
+		// await profilePage.clickCancelButton();
+		await profilePage.reloadProfilePage();
 
 		await dashboardPage.clickProfileNavigationLink();
 

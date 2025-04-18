@@ -23,7 +23,10 @@ export default defineConfig({
 			use: {
 				baseURL: process.env.BASE_URL,
 				...devices['Desktop Chrome'],
-			},
+				username: process.env.TEST_USERNAME_CHROME!,
+				password: process.env.TEST_PASSWORD_CHROME!
+				
+			} as any,
 		},
 
 		{
@@ -32,6 +35,8 @@ export default defineConfig({
 			use: {
 				baseURL: process.env.BASE_URL,
 				...devices['Desktop Firefox'],
+				username: process.env.TEST_USERNAME_FIREFOX!,
+				password: process.env.TEST_PASSWORD_FIREFOX!
 			},
 		},
 
@@ -41,6 +46,8 @@ export default defineConfig({
 			use: {
 				baseURL: process.env.BASE_URL,
 				...devices['Desktop Safari'],
+				username: process.env.TEST_USERNAME_WEBKIT!,
+				password: process.env.TEST_PASSWORD_WEBKIT!
 			},
 		},
 	],
