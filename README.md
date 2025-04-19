@@ -68,13 +68,15 @@ npx playwright test --project=firefox-ui
 npx playwright test --project=webkit-ui
 ```
 Sample run: 
-![result](images/result.png)
+
+![result](images/result-chrome.PNG)
 
 ### 4. HTML Report
 After running the test, execute command below to load report:
 ```bash
 npx playwright show-report
 ```
+![result](images/html-report1.PNG)
 
 ## 📌 Notes
 	•	Do not commit .env files with real credentials.
