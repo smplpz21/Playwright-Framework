@@ -6,7 +6,7 @@ Automation Framework written using [Playwright](https://playwright.dev/) - Types
 
 ## ✨ Features
 
-- Login and profile update flows
+- Login and profile update flow
 - Randomized test data using utilities
 - Multi-browser testing (Chromium, Firefox, WebKit)
 - Page Object Model structure
@@ -16,19 +16,20 @@ Automation Framework written using [Playwright](https://playwright.dev/) - Types
 
 
 ---
-## Pre-requisite
-MAke sure NodeJS and GIT is installed in your machine. If not,
+## Pre-requisites (IMPORTANT!!)
+Make sure NodeJS and GIT is installed in your machine. If not,
 You may install and download it here:
  - [Git](https://git-scm.com/downloads/win)
  - [NodeJs](https://nodejs.org/en)
 
 ## 🚀 Getting Started
-Open CMD
+### Open CMD / VSCode
 
 ### 1. Clone the Repository
+Make sure to change directory (cd) using the correct repo name below. Same letter casing 
 ```bash
-git clone https://github.com/smplpz21/Playwright-Reiz-Tech.git
-cd Playwright-Reiz-Tech
+git clone https://github.com/smplpz21/Playwright-Framework.git
+cd Playwright-Framework
 ```
 ### 2. Install Dependencies
 ```bash
@@ -45,10 +46,8 @@ npx playwright test
 ```
 Run a specific test file
 ```bash
-npx playwright test tests/ui/update-user-profile.spec.ts
-```
-
 Run a specific test file with specific browser
+```
 ```bash
 npx playwright test tests/ui/update-user-profile.spec.ts --project=chromium-ui
 ```
@@ -68,6 +67,8 @@ npx playwright test --project=firefox-ui
 ```bash
 npx playwright test --project=webkit-ui
 ```
+Sample run: 
+![Alt text for the image](images/result.png)
 
 ### 4. HTML Report
 After running the test, execute command below to load report:
