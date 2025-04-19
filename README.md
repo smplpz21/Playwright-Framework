@@ -68,7 +68,7 @@ npx playwright test --project=firefox-ui
 npx playwright test --project=webkit-ui
 ```
 Sample run: 
-![Alt text for the image](images/result.png)
+![result](images/result.png)
 
 ### 4. HTML Report
 After running the test, execute command below to load report:
