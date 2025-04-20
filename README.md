@@ -40,14 +40,12 @@ npm install
 npx playwright install
 ```
 ### 3. Running tests
-Run all tests
+Run all tests for all browsers
 ```bash
 npx playwright test
 ```
-Run a specific test file
-```bash
 Run a specific test file with specific browser
-```
+
 ```bash
 npx playwright test tests/ui/update-user-profile.spec.ts --project=chromium-ui
 ```
@@ -57,7 +55,9 @@ npx playwright test tests/ui/update-user-profile.spec.ts --project=firefox-ui
 ```bash
 npx playwright test tests/ui/update-user-profile.spec.ts --project=webkit-ui
 ```
-Run all test with specific browser
+
+Run all tests with specific browser
+
 ```bash
 npx playwright test --project=chromium-ui
 ```
@@ -67,6 +67,7 @@ npx playwright test --project=firefox-ui
 ```bash
 npx playwright test --project=webkit-ui
 ```
+
 Sample run: 
 
 ![result](images/result-chrome.PNG)
@@ -76,6 +77,8 @@ After running the test, execute command below to load report:
 ```bash
 npx playwright show-report
 ```
+Sample report:
+
 ![result](images/html-report1.PNG)
 
 ## 📌 Notes
